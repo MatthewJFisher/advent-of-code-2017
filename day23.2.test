@@ -1,0 +1,31 @@
+b = 65
+c = b = 65
+b = 6500
+b = 106500
+c = 106500
+c = 123500
+
+F:  f = 1
+    d = 2
+C:    e = 2
+B:      g = d
+        g = g*e
+        g = g - b
+        if g != 0 goto A: //if d * e = b then f = 0
+        f = 0
+A:      e = e + 1
+        g = e
+        g = g - b
+        if g !=0 goto B: //if e = b continue
+      d = d + 1
+      g = d
+      g = g - b
+      if g != 0 goto C: //if d = b continue
+    if f != 0 goto D: //if f = 0 continue
+    h = h + 1 // inc when f = 1 and d = b, stop when b = c
+D:  g = b
+    g = g - c
+    if g != 0 goto E
+    END
+E:  b = b + 17
+    goto F
